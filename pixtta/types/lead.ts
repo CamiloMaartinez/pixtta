@@ -36,3 +36,13 @@ export interface CreditApplicationDetails {
   monthlyIncome: number;
   downPayment: number;
 }
+
+/** Forma de `details` para un lead de tipo "vender". */
+export interface SellVehicleDetails {
+  brand: string;
+  model: string;
+  year: number;
+  mileageKm: number;
+  expectedPrice: number;
+  photos: string[];
+}

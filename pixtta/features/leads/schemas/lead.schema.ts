@@ -54,3 +54,40 @@ export function parseCreditFormData(formData: FormData) {
     vehicleId: formData.get("vehicleId") ?? "",
   });
 }
+
+export const MAX_SELL_PHOTOS = 6;
+
+/**
+ * Validación de los datos del formulario de "vender tu vehículo".
+ */
+export const sellFormSchema = z.object({
+  name: z.string().min(1, "El nombre es obligatorio"),
+  phone: z.string().min(7, "Ingresa un teléfono válido"),
+  email: z.string().email("Ingresa un correo válido"),
+  brand: z.string().min(1, "La marca es obligatoria"),
+  model: z.string().min(1, "El modelo es obligatorio"),
+  year: z.coerce.number().int().min(1950, "Año inválido"),
+  mileageKm: z.coerce.number().min(0, "El kilometraje debe ser mayor o igual a 0"),
+  expectedPrice: z.coerce.number().min(0, "El precio debe ser mayor o igual a 0"),
+  photos: z.array(z.string().url()).max(MAX_SELL_PHOTOS, "Máximo 6 fotos").optional(),
+});
+
+export type SellFormValues = z.infer<typeof sellFormSchema>;
+
+/**
+ * Convierte un FormData crudo en un objeto validado contra `sellFormSchema`.
+ * `photos` llega como múltiples campos ocultos con el mismo `name`.
+ */
+export function parseSellFormData(formData: FormData) {
+  return sellFormSchema.safeParse({
+    name: formData.get("name"),
+    phone: formData.get("phone"),
+    email: formData.get("email"),
+    brand: formData.get("brand"),
+    model: formData.get("model"),
+    year: formData.get("year"),
+    mileageKm: formData.get("mileageKm"),
+    expectedPrice: formData.get("expectedPrice"),
+    photos: formData.getAll("photos").filter((v) => typeof v === "string" && v.length > 0),
+  });
+}
