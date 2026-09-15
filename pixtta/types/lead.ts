@@ -13,7 +13,9 @@ export interface Lead {
   type: LeadType;
   name: string;
   phone: string;
+  email: string | null;
   message: string | null;
+  details: Record<string, unknown>;
   channel: LeadChannel;
   createdAt: string;
 }
@@ -23,5 +25,14 @@ export interface LeadInput {
   type: LeadType;
   name: string;
   phone: string;
+  email?: string | null;
   message?: string;
+  details?: Record<string, unknown>;
+}
+
+/** Forma de `details` para un lead de tipo "credito". */
+export interface CreditApplicationDetails {
+  cedula: string;
+  monthlyIncome: number;
+  downPayment: number;
 }

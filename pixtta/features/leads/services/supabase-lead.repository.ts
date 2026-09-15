@@ -8,7 +8,9 @@ interface LeadRow {
   type: string;
   name: string;
   phone: string;
+  email: string | null;
   message: string | null;
+  details: Record<string, unknown> | null;
   channel: string;
   created_at: string;
 }
@@ -20,7 +22,9 @@ function mapRowToLead(row: LeadRow): Lead {
     type: row.type as LeadType,
     name: row.name,
     phone: row.phone,
+    email: row.email,
     message: row.message,
+    details: row.details ?? {},
     channel: row.channel as LeadChannel,
     createdAt: row.created_at,
   };
@@ -38,7 +42,9 @@ export class SupabaseLeadRepository implements LeadRepository {
           type: data.type,
           name: data.name,
           phone: data.phone,
+          email: data.email ?? null,
           message: data.message ?? null,
+          details: data.details ?? {},
         })
         .select()
         .single();
