@@ -7,4 +7,5 @@ import type { Lead, LeadInput, Result } from "@/types";
  */
 export interface LeadRepository {
   createLead(data: LeadInput): Promise<Result<Lead>>;
+  getAllLeads(): Promise<Result<Lead[]>>;
 }

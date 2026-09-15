@@ -56,4 +56,19 @@ export class SupabaseLeadRepository implements LeadRepository {
       return { success: false, error: (err as Error).message };
     }
   }
+
+  async getAllLeads(): Promise<Result<Lead[]>> {
+    try {
+      const { data, error } = await this.supabase
+        .from("leads")
+        .select()
+        .order("created_at", { ascending: false });
+
+      if (error) return { success: false, error: error.message };
+
+      return { success: true, data: (data as LeadRow[]).map(mapRowToLead) };
+    } catch (err) {
+      return { success: false, error: (err as Error).message };
+    }
+  }
 }

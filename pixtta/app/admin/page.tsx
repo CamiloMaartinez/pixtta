@@ -16,12 +16,20 @@ export default function AdminDashboardPage(): React.JSX.Element {
           </button>
         </form>
       </div>
-      <Link
-        href="/admin/vehiculos"
-        className="mt-6 inline-flex items-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-semibold text-white"
-      >
-        Ver inventario
-      </Link>
+      <div className="mt-6 flex gap-3">
+        <Link
+          href="/admin/vehiculos"
+          className="inline-flex items-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-semibold text-white"
+        >
+          Ver inventario
+        </Link>
+        <Link
+          href="/admin/leads"
+          className="inline-flex items-center rounded-md border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900"
+        >
+          Ver leads
+        </Link>
+      </div>
     </main>
   );
 }
