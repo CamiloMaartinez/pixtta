@@ -12,7 +12,7 @@ interface VehicleGridProps {
 export function VehicleGrid({ vehicles }: VehicleGridProps): React.JSX.Element {
   if (vehicles.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-neutral-300 p-12 text-center text-sm text-neutral-500">
+      <div className="rounded-lg border border-dashed border-titanium/40 p-12 text-center text-sm text-titanium">
         No hay vehículos disponibles por el momento.
       </div>
     );

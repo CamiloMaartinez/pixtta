@@ -37,8 +37,8 @@ export function VehicleSpecs({ vehicle }: VehicleSpecsProps): React.JSX.Element 
     <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {specs.map((spec) => (
         <div key={spec.label}>
-          <dt className="text-xs uppercase tracking-wide text-neutral-500">{spec.label}</dt>
-          <dd className="mt-1 text-sm font-medium text-neutral-900">{spec.value}</dd>
+          <dt className="text-xs uppercase tracking-wide text-titanium">{spec.label}</dt>
+          <dd className="mt-1 text-sm font-medium text-alabaster">{spec.value}</dd>
         </div>
       ))}
     </dl>

@@ -2,3 +2,4 @@ export * from "./vehicle";
 export * from "./admin";
 export * from "./api";
 export * from "./lead";
+export * from "./brand";

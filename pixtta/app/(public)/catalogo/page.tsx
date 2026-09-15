@@ -24,7 +24,7 @@ export default async function CatalogoPage({
   if (!result.success) {
     return (
       <main className="mx-auto max-w-6xl p-8">
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-ignition">
           No se pudo cargar el catálogo: {result.error}
         </p>
       </main>
@@ -33,7 +33,7 @@ export default async function CatalogoPage({
 
   return (
     <main className="mx-auto max-w-6xl p-8">
-      <h1 className="mb-6 text-2xl font-bold text-neutral-900">Catálogo</h1>
+      <h1 className="mb-6 font-display text-2xl text-alabaster">Catálogo</h1>
       <VehicleFilters />
       <VehicleGrid vehicles={result.data} />
     </main>

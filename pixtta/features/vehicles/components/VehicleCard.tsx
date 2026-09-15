@@ -18,9 +18,9 @@ export function VehicleCard({ vehicle }: VehicleCardProps): React.JSX.Element {
   return (
     <Link
       href={`/vehiculo/${vehicle.slug}`}
-      className="flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
+      className="flex flex-col overflow-hidden rounded-lg border border-titanium/30 bg-graphite"
     >
-      <div className="relative aspect-[4/3] w-full bg-neutral-100">
+      <div className="relative aspect-[4/3] w-full bg-carbon">
         {coverImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -29,7 +29,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps): React.JSX.Element {
             className="h-full w-full object-cover"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-xs text-neutral-400">
+          <div className="flex h-full w-full items-center justify-center text-xs text-titanium">
             Sin fotografía
           </div>
         )}
@@ -37,17 +37,17 @@ export function VehicleCard({ vehicle }: VehicleCardProps): React.JSX.Element {
 
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div>
-          <p className="text-xs uppercase tracking-wide text-neutral-500">{vehicle.brand}</p>
-          <h3 className="text-lg font-semibold text-neutral-900">{vehicle.model}</h3>
+          <p className="text-xs uppercase tracking-wide text-titanium">{vehicle.brand}</p>
+          <h3 className="font-display text-lg text-alabaster">{vehicle.model}</h3>
         </div>
 
-        <div className="flex flex-wrap gap-3 text-xs text-neutral-600">
+        <div className="flex flex-wrap gap-3 text-xs text-titanium">
           <span>{vehicle.year}</span>
           <span>{formatKm(vehicle.mileageKm)}</span>
           <span>{vehicle.horsepower} HP</span>
         </div>
 
-        <p className="mt-auto text-lg font-bold text-neutral-900">
+        <p className="mt-auto text-lg font-bold text-alabaster">
           {formatCurrency(vehicle.price)}
         </p>
       </div>

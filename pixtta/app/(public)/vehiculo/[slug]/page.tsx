@@ -83,13 +83,13 @@ export default async function VehiculoPage({
         <VehicleGallery images={vehicle.images} alt={`${vehicle.brand} ${vehicle.model}`} />
 
         <div>
-          <p className="text-xs uppercase tracking-wide text-neutral-500">{vehicle.brand}</p>
-          <h1 className="text-3xl font-bold text-neutral-900">{vehicle.model}</h1>
-          <p className="mt-2 text-2xl font-semibold text-neutral-900">
+          <p className="text-xs uppercase tracking-wide text-titanium">{vehicle.brand}</p>
+          <h1 className="font-display text-3xl text-alabaster">{vehicle.model}</h1>
+          <p className="mt-2 text-2xl font-semibold text-alabaster">
             {formatCurrency(vehicle.price)}
           </p>
 
-          <p className="mt-4 text-sm text-neutral-600">{vehicle.description}</p>
+          <p className="mt-4 text-sm text-titanium">{vehicle.description}</p>
 
           <div className="mt-6">
             <VehicleSpecs vehicle={vehicle} />
@@ -99,7 +99,7 @@ export default async function VehiculoPage({
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-flex items-center justify-center rounded-md bg-neutral-900 px-6 py-3 text-sm font-semibold text-white"
+            className="mt-8 inline-flex items-center justify-center rounded-md bg-ignition px-6 py-3 text-sm font-semibold text-alabaster transition-colors hover:bg-ignition/90"
           >
             Consultar por WhatsApp
           </a>

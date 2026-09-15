@@ -29,8 +29,8 @@ export function VehicleFilters(): React.JSX.Element {
           onClick={() => setFilter("category", undefined)}
           className={`rounded-full border px-3 py-1.5 text-xs font-medium ${
             !filters.category
-              ? "border-neutral-900 bg-neutral-900 text-white"
-              : "border-neutral-300 text-neutral-600"
+              ? "border-ignition bg-ignition text-alabaster"
+              : "border-titanium/40 text-titanium"
           }`}
         >
           Todos
@@ -42,8 +42,8 @@ export function VehicleFilters(): React.JSX.Element {
             onClick={() => setFilter("category", option.value)}
             className={`rounded-full border px-3 py-1.5 text-xs font-medium ${
               filters.category === option.value
-                ? "border-neutral-900 bg-neutral-900 text-white"
-                : "border-neutral-300 text-neutral-600"
+                ? "border-ignition bg-ignition text-alabaster"
+                : "border-titanium/40 text-titanium"
             }`}
           >
             {option.label}
@@ -56,12 +56,12 @@ export function VehicleFilters(): React.JSX.Element {
           value={searchInput}
           onChange={(event) => setSearchInput(event.target.value)}
           placeholder="Buscar marca o modelo"
-          className="rounded-md border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+          className="rounded-md border border-titanium/40 bg-carbon px-3 py-2 text-sm text-alabaster outline-none focus:border-teal"
         />
         <select
           value={filters.sort ?? ""}
           onChange={(event) => setFilter("sort", event.target.value || undefined)}
-          className="rounded-md border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+          className="rounded-md border border-titanium/40 bg-carbon px-3 py-2 text-sm text-alabaster outline-none focus:border-teal"
         >
           <option value="">Relevancia</option>
           <option value="precio-asc">Precio: menor a mayor</option>

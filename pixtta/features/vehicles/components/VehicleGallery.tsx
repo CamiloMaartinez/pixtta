@@ -18,7 +18,7 @@ export function VehicleGallery({ images, alt }: VehicleGalleryProps): React.JSX.
 
   if (images.length === 0) {
     return (
-      <div className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-neutral-100 text-sm text-neutral-400">
+      <div className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-graphite text-sm text-titanium">
         Sin fotografías
       </div>
     );
@@ -28,7 +28,7 @@ export function VehicleGallery({ images, alt }: VehicleGalleryProps): React.JSX.
 
   return (
     <div>
-      <div className="aspect-[4/3] w-full overflow-hidden rounded-lg bg-neutral-100">
+      <div className="aspect-[4/3] w-full overflow-hidden rounded-lg bg-graphite">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={activeImage.url} alt={alt} className="h-full w-full object-cover" />
       </div>
@@ -41,7 +41,7 @@ export function VehicleGallery({ images, alt }: VehicleGalleryProps): React.JSX.
               type="button"
               onClick={() => setActiveIndex(index)}
               className={`h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border-2 ${
-                index === activeIndex ? "border-neutral-900" : "border-transparent"
+                index === activeIndex ? "border-ignition" : "border-transparent"
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
