@@ -37,6 +37,7 @@ export function ImageUploader({ vehicleId, images }: ImageUploaderProps): React.
     try {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
+        if (!file) continue;
 
         const signRes = await fetch("/api/cloudinary/sign", { method: "POST" });
         if (!signRes.ok) throw new Error("No se pudo generar la firma de subida.");

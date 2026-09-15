@@ -22,9 +22,9 @@ export function useVehicleFilters() {
   function setFilter(key: keyof VehicleFilters, value: string | undefined): void {
     const params = new URLSearchParams(searchParams.toString());
     if (value) {
-      params.set(key, value);
+      params.set(String(key), value);
     } else {
-      params.delete(key);
+      params.delete(String(key));
     }
     router.push(`${pathname}?${params.toString()}`);
   }

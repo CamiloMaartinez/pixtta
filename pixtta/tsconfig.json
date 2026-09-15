@@ -21,6 +21,7 @@
       "@/components/*": ["components/*"],
       "@/features/*": ["features/*"],
       "@/lib/*": ["lib/*"],
+      "@/types": ["types/index"],
       "@/types/*": ["types/*"],
       "@/app/*": ["app/*"]
     }

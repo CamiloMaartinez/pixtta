@@ -24,7 +24,7 @@ export function VehicleGallery({ images, alt }: VehicleGalleryProps): React.JSX.
     );
   }
 
-  const activeImage = images[activeIndex] ?? images[0];
+  const activeImage = images[activeIndex] ?? images[0]!;
 
   return (
     <div>
