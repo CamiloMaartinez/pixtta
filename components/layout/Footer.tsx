@@ -105,7 +105,7 @@ export async function Footer(): Promise<React.JSX.Element> {
       </p>
 
       <p className="mx-auto mt-4 max-w-6xl border-t border-titanium/10 pt-4 font-body text-[11px] text-titanium/40">
-        Diseñado y desarrollado por Camilo Martinez
+        Diseñado y desarrollado por Camilo Martinez · cm942995@gmail.com
       </p>
     </footer>
   );
