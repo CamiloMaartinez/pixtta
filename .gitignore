@@ -1,0 +1,19 @@
+/node_modules
+/.next/
+/out/
+/build
+.env
+.env.local
+.env*.local
+npm-debug.log*
+.DS_Store
+*.pem
+.vercel
+
+.next-test
+
+# Material de referencia guardado desde otros sitios (páginas de terceros, Instagram con sesión, etc.)
+/import/
+/dist
+*.tsbuildinfo
+.next-*

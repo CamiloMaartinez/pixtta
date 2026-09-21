@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-carbon text-alabaster font-body;
+}
+
+::selection {
+  background: #e6303d;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #e6303d;
+  outline-offset: 2px;
+}
+
+/* Entrada del hero (Home) — usada vía `motion-safe:animate-[fade-up_...]`,
+   Tailwind gatea prefers-reduced-motion automáticamente con ese variant. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================================
+   Movimiento (habilidad animate)
+   Curvas fijas; solo transform/opacity; hover solo con puntero fino;
+   con prefers-reduced-motion se conserva el fundido y se quita el movimiento.
+   ============================================================= */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Feedback de pulsación: botones y enlaces-botón. Propósito: confirmar que la interfaz "oyó". */
+.press {
+  transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* Hero: aparición escalonada de las fotos (una vez, al cargar) y zoom lento decorativo. */
+@keyframes hero-tile-in {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+.hero-tile {
+  opacity: 0;
+  animation: hero-tile-in 900ms var(--ease-out) forwards;
+  animation-delay: var(--tile-delay, 0ms);
+}
+.hero-tile > img {
+  animation: hero-drift 26s ease-in-out infinite alternate;
+  animation-delay: 900ms;
+}
+
+/* Collage: entrada escalonada cuando la sección entra en pantalla. */
+.collage-tile {
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+  transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
+  transition-delay: var(--tile-delay, 0ms);
+}
+.collage-visible .collage-tile {
+  opacity: 1;
+  transform: none;
+}
+.collage-tile img {
+  transition: transform 600ms var(--ease-out);
+}
+.collage-caption {
+  transition: opacity 250ms var(--ease-out), transform 250ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .collage-tile:hover img {
+    transform: scale(1.06);
+  }
+  .collage-tile:hover .collage-caption {
+    transform: translateY(-4px);
+  }
+  .collage-tile:hover .collage-plus {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.collage-plus {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+
+/* Lightbox: <dialog> nativo (foco atrapado y Esc de serie). Modal centrado: origin center. */
+.pixtta-lightbox {
+  margin: auto;
+  max-width: min(94vw, 1100px);
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  overflow: visible;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 250ms var(--ease-out), transform 250ms var(--ease-out),
+    display 250ms allow-discrete, overlay 250ms allow-discrete;
+}
+.pixtta-lightbox[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+@starting-style {
+  .pixtta-lightbox[open] {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+.pixtta-lightbox::backdrop {
+  background: rgba(12, 10, 15, 0.86);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 250ms var(--ease-out), display 250ms allow-discrete, overlay 250ms allow-discrete;
+}
+.pixtta-lightbox[open]::backdrop {
+  opacity: 1;
+}
+@starting-style {
+  .pixtta-lightbox[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+/* Marquee de marcas: bordes que se desvanecen y pausa al apuntar (solo con puntero fino). */
+.pixtta-brands-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+@media (hover: hover) and (pointer: fine) {
+  .pixtta-brands-mask:hover .pixtta-brands-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Tarjetas de llamado a la acción. */
+.cta-card {
+  transition: transform 220ms var(--ease-out), border-color 220ms var(--ease-out),
+    background-color 220ms var(--ease-out);
+}
+.cta-card:active {
+  transform: scale(0.985);
+}
+.cta-arrow {
+  transition: transform 220ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cta-card:hover {
+    transform: translateY(-3px);
+    border-color: #e6303d;
+    background-color: #2b2831;
+  }
+  .cta-card:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* Foto de las tarjetas de vehículo: zoom suave al apuntar. */
+.vehicle-photo {
+  transition: transform 500ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  a:hover > div > .vehicle-photo,
+  a:hover .vehicle-photo {
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tile {
+    opacity: 1;
+    animation: none;
+  }
+  .hero-tile > img {
+    animation: none;
+  }
+  .collage-tile {
+    transform: none;
+    transition: opacity 200ms ease;
+    transition-delay: 0ms;
+  }
+  .collage-tile img,
+  .collage-caption,
+  .collage-plus,
+  .vehicle-photo,
+  .cta-card,
+  .cta-arrow,
+  .press {
+    transition-property: opacity, background-color, border-color, color;
+  }
+  .pixtta-lightbox {
+    transform: none;
+    transition: opacity 150ms ease, display 150ms allow-discrete, overlay 150ms allow-discrete;
+  }
+  @starting-style {
+    .pixtta-lightbox[open] {
+      transform: none;
+    }
+  }
+  .cta-card:hover,
+  .cta-card:hover .cta-arrow,
+  .collage-tile:hover img,
+  .collage-tile:hover .collage-caption,
+  a:hover .vehicle-photo {
+    transform: none;
+  }
+}
