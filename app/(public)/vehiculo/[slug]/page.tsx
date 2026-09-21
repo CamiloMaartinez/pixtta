@@ -78,14 +78,14 @@ export default async function VehiculoPage({
   };
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
+    <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
         <HudFrame accent={accent}>
           <VehicleGallery
             images={vehicle.images}
@@ -96,12 +96,12 @@ export default async function VehiculoPage({
 
         <div>
           <p className="font-body text-xs font-medium uppercase tracking-wide text-titanium">{vehicle.brand}</p>
-          <h1 className="mt-1 font-display text-4xl font-extrabold uppercase leading-tight text-alabaster">
+          <h1 className="mt-1 break-words font-display text-3xl font-extrabold uppercase leading-tight text-alabaster sm:text-4xl">
             {vehicle.model}
           </h1>
 
           <HudFrame accent={accent} className="mt-4 inline-block">
-            <p className="border border-titanium/15 bg-graphite px-4 py-2 font-mono text-2xl font-semibold text-alabaster">
+            <p className="border border-titanium/15 bg-graphite px-4 py-2 font-mono text-xl font-semibold sm:text-2xl text-alabaster">
               {formatCurrency(vehicle.price)}
             </p>
           </HudFrame>
@@ -118,7 +118,7 @@ export default async function VehiculoPage({
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
-            className={`mt-8 inline-flex items-center justify-center border border-titanium/20 px-8 py-3 font-body text-sm font-semibold uppercase tracking-wide text-alabaster transition-colors ${ctaBg}`}
+            className={`mt-8 flex w-full items-center justify-center border border-titanium/20 px-8 py-4 font-body text-sm sm:inline-flex sm:w-auto sm:py-3 font-semibold uppercase tracking-wide text-alabaster transition-colors ${ctaBg}`}
           >
             Consultar por WhatsApp
           </a>

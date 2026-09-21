@@ -8,20 +8,20 @@ export async function AvailableVehicles(): Promise<React.JSX.Element> {
   const vehicles = result.success ? result.data.items : [];
 
   return (
-    <section className="border-t border-titanium/10 px-6 py-16">
+    <section className="border-t border-titanium/10 px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
           <div>
             <p className="font-body text-xs font-medium uppercase tracking-[0.2em] text-titanium">
               Disponibles ahora
             </p>
-            <h2 className="mt-1 font-display text-3xl font-extrabold text-alabaster">
+            <h2 className="mt-1 font-display text-2xl font-extrabold text-alabaster sm:text-3xl">
               Vehículos disponibles
             </h2>
           </div>
           <Link
             href="/catalogo"
-            className="font-body text-xs font-medium uppercase tracking-wide text-titanium hover:text-alabaster hover:underline"
+            className="shrink-0 whitespace-nowrap py-2 font-body text-xs font-medium uppercase tracking-wide text-titanium hover:text-alabaster hover:underline"
           >
             Ver todos →
           </Link>

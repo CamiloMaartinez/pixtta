@@ -54,7 +54,7 @@ export default async function CatalogoPage({
 
   if (!result.success) {
     return (
-      <main className="mx-auto max-w-6xl px-6 py-12">
+      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
         <p className="font-body text-sm text-ignition">
           No se pudo cargar el catálogo: {result.error}
         </p>
@@ -76,7 +76,7 @@ export default async function CatalogoPage({
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-12">
+    <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
       <h1 className="mb-6 font-display text-2xl font-extrabold uppercase text-alabaster">
         Catálogo
       </h1>

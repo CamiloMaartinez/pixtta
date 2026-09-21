@@ -51,13 +51,13 @@ export function VehicleGallery({
       </div>
 
       {images.length > 1 && (
-        <div className="mt-3 flex gap-2 overflow-x-auto">
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
           {images.map((image, index) => (
             <button
               key={image.id}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`relative h-16 w-16 flex-shrink-0 overflow-hidden border-2 transition-colors ${
+              className={`relative h-14 w-14 flex-shrink-0 sm:h-16 sm:w-16 overflow-hidden border-2 transition-colors ${
                 index === activeIndex ? activeBorder : "border-transparent"
               }`}
             >

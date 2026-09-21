@@ -7,8 +7,8 @@ export default async function AdminVehiculosPage(): Promise<React.JSX.Element> {
   const result = await repository.getAllVehicles({});
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
-      <div className="mb-6 flex items-center justify-between">
+    <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
+      <div className="mb-6 flex items-center justify-between gap-3">
         <div>
           <Link
             href="/admin"
@@ -22,7 +22,7 @@ export default async function AdminVehiculosPage(): Promise<React.JSX.Element> {
         </div>
         <Link
           href="/admin/vehiculos/nuevo"
-          className="border border-titanium/20 bg-ignition px-4 py-2 font-body text-sm font-semibold uppercase tracking-wide text-alabaster"
+          className="shrink-0 whitespace-nowrap border border-titanium/20 bg-ignition px-3 py-2.5 font-body text-xs font-semibold uppercase tracking-wide text-alabaster sm:px-4 sm:py-2 sm:text-sm"
         >
           + Nuevo vehículo
         </Link>

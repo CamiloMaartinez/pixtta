@@ -23,23 +23,23 @@ export function CatalogPagination({
   const isLast = page >= totalPages;
 
   return (
-    <div className="mt-10 flex items-center justify-center gap-4">
+    <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
+      <span className="order-first w-full text-center font-mono text-xs text-titanium sm:order-none sm:w-auto">
+        Página {page} de {totalPages}
+      </span>
       <Link
         href={buildHref(Math.max(1, page - 1))}
         aria-disabled={isFirst}
-        className={`border border-titanium/20 px-4 py-2 font-body text-xs font-medium uppercase tracking-wide ${
+        className={`flex-1 border border-titanium/20 px-4 py-3 text-center font-body text-xs font-medium uppercase tracking-wide sm:order-first sm:flex-none sm:py-2 ${
           isFirst ? "pointer-events-none text-titanium/30" : "text-alabaster hover:border-ignition"
         }`}
       >
         Anterior
       </Link>
-      <span className="font-mono text-xs text-titanium">
-        Página {page} de {totalPages}
-      </span>
       <Link
         href={buildHref(Math.min(totalPages, page + 1))}
         aria-disabled={isLast}
-        className={`border border-titanium/20 px-4 py-2 font-body text-xs font-medium uppercase tracking-wide ${
+        className={`flex-1 border border-titanium/20 px-4 py-3 text-center font-body text-xs font-medium uppercase tracking-wide sm:flex-none sm:py-2 ${
           isLast ? "pointer-events-none text-titanium/30" : "text-alabaster hover:border-ignition"
         }`}
       >

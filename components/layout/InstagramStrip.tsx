@@ -22,7 +22,7 @@ function roundedCount(value: number): string {
  */
 export function InstagramStrip(): React.JSX.Element {
   return (
-    <section className="border-t border-titanium/10 px-6 py-16">
+    <section className="border-t border-titanium/10 px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>

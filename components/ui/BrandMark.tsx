@@ -26,7 +26,9 @@ export function BrandMark({ brand, size = "sm" }: BrandMarkProps): React.JSX.Ele
     const img = imgRef.current;
     if (img?.complete && img.naturalWidth > 0) setLogoLoaded(true);
   }, []);
-  const dimensions = size === "lg" ? "h-24 w-40" : "h-16 w-28";
+  // "lg" vive en la grilla de /marcas: en móvil ocupa el ancho de su celda (2 columnas en
+  // pantallas de 360px no caben a 160px fijos); desde `sm` vuelve a 160×96.
+  const dimensions = size === "lg" ? "h-20 w-full sm:h-24 sm:w-40" : "h-16 w-28";
 
   return (
     <div

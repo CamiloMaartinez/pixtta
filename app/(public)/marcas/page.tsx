@@ -15,7 +15,7 @@ export default async function MarcasPage(): Promise<React.JSX.Element> {
   const brands = result.success ? result.data : [];
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
+    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
       <Reveal>
         <p className="font-body text-xs font-medium uppercase tracking-[0.2em] text-titanium">
           Catálogo por marca

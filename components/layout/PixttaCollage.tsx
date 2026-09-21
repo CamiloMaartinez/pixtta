@@ -117,7 +117,7 @@ export function PixttaCollage(): React.JSX.Element {
   const item = ITEMS[current] ?? ITEMS[0]!;
 
   return (
-    <section className="border-t border-titanium/10 px-6 py-16">
+    <section className="border-t border-titanium/10 px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <p className="font-body text-xs font-medium uppercase tracking-[0.2em] text-titanium">
           Galería

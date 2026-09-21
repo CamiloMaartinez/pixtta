@@ -6,6 +6,28 @@ body {
   @apply bg-carbon text-alabaster font-body;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Red de seguridad móvil: ninguna sección puede provocar scroll horizontal de la página.
+   `clip` (a diferencia de `hidden`) no rompe el `position: sticky` del navbar. */
+body {
+  overflow-x: clip;
+}
+
+/* iOS hace zoom automático al enfocar un campo con fuente < 16px: en móvil se fuerza 16px.
+   El selector es más específico que las utilidades `text-sm`, así que gana sin `!important`.
+   Desde `sm` (≥640px) vuelve el tamaño compacto original de escritorio. */
+@media (max-width: 639px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
 ::selection {
   background: #e6303d;
   color: #ffffff;
@@ -117,6 +139,7 @@ body {
   margin: auto;
   max-width: min(94vw, 1100px);
   max-height: 92vh;
+  max-height: 92dvh;
   padding: 0;
   border: 0;
   background: transparent;

@@ -86,7 +86,7 @@ export function VehicleSpecs({ vehicle }: VehicleSpecsProps): React.JSX.Element 
             {spec.label}
           </dt>
           <dd
-            className={`mt-1 text-sm text-alabaster ${
+            className={`mt-1 break-words text-sm text-alabaster ${
               spec.numeric ? "font-mono font-medium" : "font-body font-medium"
             }`}
           >

@@ -29,9 +29,9 @@ export async function Footer(): Promise<React.JSX.Element> {
   const phoneHref = `tel:+${profile.whatsappNumber}`;
 
   return (
-    <footer className="border-t border-titanium/10 px-6 py-12">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="lg:col-span-2">
+    <footer className="border-t border-titanium/10 px-4 py-10 sm:px-6 sm:py-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4">
+        <div className="sm:col-span-2 lg:col-span-2">
           <Logo variant="full" height={44} />
           <p className="mt-4 max-w-md font-body text-sm text-titanium">{profile.description}</p>
 
@@ -44,7 +44,7 @@ export async function Footer(): Promise<React.JSX.Element> {
                   rel="noreferrer"
                   aria-label={link.label}
                   title={link.label}
-                  className="flex h-10 w-10 items-center justify-center border border-titanium/20 text-titanium transition-colors duration-150 ease-out hover:border-ignition hover:text-ignition"
+                  className="flex h-11 w-11 items-center justify-center border border-titanium/20 sm:h-10 sm:w-10 text-titanium transition-colors duration-150 ease-out hover:border-ignition hover:text-ignition"
                 >
                   <SocialIcon platform={link.platform} />
                 </a>

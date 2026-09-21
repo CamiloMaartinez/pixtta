@@ -37,7 +37,7 @@ export default async function InformacionPage(): Promise<React.JSX.Element> {
 
   return (
     <>
-      <main className="mx-auto max-w-6xl px-6 py-16">
+      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
         <Reveal>
           <p className="font-body text-xs font-medium uppercase tracking-[0.2em] text-titanium">
             Sobre Pixtta
@@ -51,7 +51,7 @@ export default async function InformacionPage(): Promise<React.JSX.Element> {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-6">
           {HIGHLIGHTS.map(({ title, description, Icon }, index) => (
             <Reveal key={title} delay={index * 60}>
               <div className="h-full border border-titanium/15 bg-graphite p-6">
@@ -100,7 +100,7 @@ export default async function InformacionPage(): Promise<React.JSX.Element> {
       </main>
 
       <Reveal>
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16 text-center">
           <p className="font-body text-sm text-titanium">
             ¿Tienes preguntas sobre un vehículo o quieres agendar una visita?
           </p>

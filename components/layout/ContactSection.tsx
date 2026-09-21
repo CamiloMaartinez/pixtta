@@ -14,18 +14,18 @@ export async function ContactSection(): Promise<React.JSX.Element> {
   const whatsappLink = buildWhatsappLink(profile.whatsappNumber);
 
   return (
-    <section className="border-t border-titanium/10 px-6 py-16">
+    <section className="border-t border-titanium/10 px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2">
         <div>
           <p className="font-body text-xs font-medium uppercase tracking-[0.2em] text-titanium">Visítanos</p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-alabaster">{formatFullAddress(profile)}</h2>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a href={buildGoogleMapsLink(coords)} target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-titanium/20 px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-wide text-alabaster hover:border-ignition"><MapPin size={15} /> Google Maps</a>
-            <a href={buildWazeLink(coords)} target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-titanium/20 px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-wide text-alabaster hover:border-ignition"><Navigation size={15} /> Waze</a>
+          <h2 className="mt-2 font-display text-xl font-extrabold uppercase text-alabaster sm:text-2xl">{formatFullAddress(profile)}</h2>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+            <a href={buildGoogleMapsLink(coords)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 border border-titanium/20 px-4 py-3 font-body text-xs font-semibold uppercase tracking-wide text-alabaster hover:border-ignition sm:justify-start sm:py-2.5"><MapPin size={15} /> Google Maps</a>
+            <a href={buildWazeLink(coords)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 border border-titanium/20 px-4 py-3 font-body text-xs font-semibold uppercase tracking-wide text-alabaster hover:border-ignition sm:justify-start sm:py-2.5"><Navigation size={15} /> Waze</a>
           </div>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-1 sm:mt-8 sm:gap-4">
             {profile.socialLinks.map(({ platform, label, url }) => (
-              <a key={platform} href={platform === "whatsapp" ? whatsappLink : url} target="_blank" rel="noreferrer" className="flex items-center gap-2 font-body text-xs font-medium uppercase tracking-wide text-titanium hover:text-alabaster"><SocialIcon platform={platform} size={16} /> {label}</a>
+              <a key={platform} href={platform === "whatsapp" ? whatsappLink : url} target="_blank" rel="noreferrer" className="flex items-center gap-2 py-2 font-body text-xs font-medium uppercase tracking-wide text-titanium hover:text-alabaster sm:py-0"><SocialIcon platform={platform} size={16} /> {label}</a>
             ))}
           </div>
         </div>

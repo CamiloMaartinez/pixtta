@@ -31,7 +31,7 @@ export default async function EditarVehiculoPage({
   const categories = categoriesResult.success ? categoriesResult.data : [];
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
+    <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
       <Link
         href="/admin/vehiculos"
         className="font-body text-xs font-medium uppercase tracking-wide text-titanium hover:text-alabaster hover:underline"

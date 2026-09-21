@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Escríbenos por WhatsApp, visítanos en Bucaramanga o deja tus datos y te contactamos pronto.",
 };
 
-const CARD_CLASS = "border border-titanium/15 bg-graphite p-6";
+const CARD_CLASS = "border border-titanium/15 bg-graphite p-5 sm:p-6";
 const LABEL_CLASS =
   "font-body text-xs font-medium uppercase tracking-[0.2em] text-titanium";
 const ACTION_CLASS =
@@ -28,7 +28,7 @@ export default async function ContactoPage(): Promise<React.JSX.Element> {
   const whatsappLink = buildWhatsappLink(profile.whatsappNumber);
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
+    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
       <p className={LABEL_CLASS}>Hablemos</p>
       <h1 className="mt-2 font-display text-3xl font-extrabold uppercase text-alabaster">
         Contacto

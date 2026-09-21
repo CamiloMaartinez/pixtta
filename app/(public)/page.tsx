@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function HomePage(): React.JSX.Element {
   return (
     <>
-      <main className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
+      <main className="relative flex min-h-[85svh] flex-col items-center justify-center overflow-hidden px-4 py-16 text-center sm:px-6 sm:py-20">
         <HeroMosaic />
 
         <div className="motion-safe:animate-[fade-up_0.9s_cubic-bezier(0.23,1,0.32,1)_both]">
